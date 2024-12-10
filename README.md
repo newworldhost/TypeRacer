@@ -21,8 +21,8 @@ This is a simple typing speed test application built using HTML, CSS, and JavaSc
 - Best score tracking for each difficulty level using `localStorage`.
 - User-friendly interface with a text-based input field, control buttons, and a results display area.
 ## validation 
-[HTML Validation](https://i.ibb.co/JqnMvt0/)
-[CSS Validation](https://i.ibb.co/18Yszxf/)
+[HTML Validation](https://i.postimg.cc/cCVtHGVW/validation.png)
+[CSS Validation](https://i.postimg.cc/kGVtqgYw/css-valid.png)
 ## Game Data
 
 The game data is stored in a JSON object within the `script.js` file. It includes information about sentences for each difficulty level.
