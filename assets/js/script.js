@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', function () {
     const startBtn = document.getElementById('start-btn');
     const stopBtn = document.getElementById('stop-btn');
