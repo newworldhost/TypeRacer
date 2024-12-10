@@ -40,3 +40,7 @@ const sentences = {
         "We promptly judged antique ivory buckles for the next prize."
     ]
 };
+
+## validation
+![html validation](https://ibb.co/JqnMvt0)
+![css validation](https://ibb.co/18Yszxf)
