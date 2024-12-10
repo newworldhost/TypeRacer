@@ -23,6 +23,7 @@ This is a simple typing speed test application built using HTML, CSS, and JavaSc
 ## validation 
 [HTML Validation](https://i.postimg.cc/cCVtHGVW/validation.png)
 [CSS Validation](https://i.postimg.cc/kGVtqgYw/css-valid.png)
+[javascript validation](https://i.postimg.cc/CK3KkscC/js.png)
 ## Game Data
 
 The game data is stored in a JSON object within the `script.js` file. It includes information about sentences for each difficulty level.
