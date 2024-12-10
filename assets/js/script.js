@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const wpmDisplay = document.getElementById('wpm');
     const levelDisplay = document.getElementById('level');
     const difficultySelect = document.getElementById('difficulty');
+    const bestScoreDisplay = document.getElementById('bestScore');
 
     let timer;
     let startTime;
@@ -31,12 +32,21 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
     };
 
+    function getBestScore(difficulty) {
+        return localStorage.getItem(`bestScore_${difficulty}`) || 0;
+    }
+
+    function setBestScore(difficulty, score) {
+        localStorage.setItem(`bestScore_${difficulty}`, score);
+    }
+
     difficultySelect.addEventListener('change', function() {
         const difficulty = this.value;
         const randomSentence = sentences[difficulty][Math.floor(Math.random() * sentences[difficulty].length)];
         sampleText.textContent = randomSentence;
         currentTexts = sentences[difficulty];
         currentIndex = 0;
+        bestScoreDisplay.textContent = getBestScore(difficulty);
     });
 
     function startGame() {
@@ -59,6 +69,12 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(timer);
         userInput.disabled = true;
         calculateWPM();
+        const difficulty = difficultySelect.value;
+        const bestScore = getBestScore(difficulty);
+        if (score > bestScore) {
+            setBestScore(difficulty, score);
+            bestScoreDisplay.textContent = score;
+        }
     }
 
     function resetGame() {
@@ -67,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sampleText.textContent = '';
         timeDisplay.textContent = '0';
         wpmDisplay.textContent = '0';
+        score = 0;
     }
 
     function updateTime() {
@@ -111,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearInterval(timer);
                 userInput.disabled = true;
                 sampleText.textContent = 'Test completed!';
+                stopGame();
             }
         }
     });
