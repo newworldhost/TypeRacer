@@ -42,5 +42,5 @@ const sentences = {
 };
 
 ## validation
-![html validation](https://ibb.co/JqnMvt0)
-![css validation](https://ibb.co/18Yszxf)
+![HTML Validation](https://i.ibb.co/JqnMvt0/html-validation.png)
+![CSS Validation](https://i.ibb.co/18Yszxf/css-validation.png)
