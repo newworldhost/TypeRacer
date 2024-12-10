@@ -13,3 +13,8 @@ body {
     font-family: 'Nunito', sans-serif;
     background-color: orange;
 }
+#instructions-btn {
+color: white;
+background-color: green;
+border: 2px solid black;
+}
