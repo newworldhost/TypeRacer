@@ -11,9 +11,9 @@ div.row {
 }
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: orange;
+    background-color: slateblue;
 }
-#instructions-btn {
+#instructions-btn, #start-btn, #stop-btn, #retry-btn{
 color: white;
 background-color: green;
 border: 2px solid black;
