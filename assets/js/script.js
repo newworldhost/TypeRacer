@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let timer;
     let startTime;
     let isRunning = false;
+    let score = 0;
+    let currentTexts = [];
+    let currentIndex = 0;
 
     const sentences = {
         easy: [
@@ -28,11 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
     };
 
-    document.getElementById('difficulty').addEventListener('change', function() {
+    difficultySelect.addEventListener('change', function() {
         const difficulty = this.value;
-        const sampleTextDiv = document.getElementById('sample-text');
         const randomSentence = sentences[difficulty][Math.floor(Math.random() * sentences[difficulty].length)];
-        sampleTextDiv.textContent = randomSentence;
+        sampleText.textContent = randomSentence;
+        currentTexts = sentences[difficulty];
+        currentIndex = 0;
     });
 
     function startGame() {
@@ -77,6 +81,39 @@ document.addEventListener('DOMContentLoaded', function () {
         const wpm = Math.round((wordsTyped / elapsedTime) * 60);
         wpmDisplay.textContent = isNaN(wpm) ? '0' : wpm;
     }
+
+    userInput.addEventListener('input', function() {
+        const currentSentence = sampleText.textContent;
+        const userInputValue = userInput.value;
+        let highlightedText = '';
+
+        for (let i = 0; i < currentSentence.length; i++) {
+            if (i < userInputValue.length) {
+                if (userInputValue[i] === currentSentence[i]) {
+                    highlightedText += `<span style="color: blue;">${currentSentence[i]}</span>`;
+                } else {
+                    highlightedText += `<span style="color: red;">${currentSentence[i]}</span>`;
+                }
+            } else {
+                highlightedText += currentSentence[i];
+            }
+        }
+
+        sampleText.innerHTML = highlightedText;
+
+        if (userInput.value === currentSentence) {
+            score++;
+            userInput.value = '';
+            currentIndex++;
+            if (currentIndex < currentTexts.length) {
+                sampleText.textContent = currentTexts[currentIndex];
+            } else {
+                clearInterval(timer);
+                userInput.disabled = true;
+                sampleText.textContent = 'Test completed!';
+            }
+        }
+    });
 
     startBtn.addEventListener('click', startGame);
     stopBtn.addEventListener('click', stopGame);
