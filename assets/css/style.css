@@ -1,1 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family= Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+h2, h1.h3  {
+    color:black;
+}
+p, p#sampleText {
+    color:black;
+
+}
+div.row {
+    background-color: green;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: orange;
+}
