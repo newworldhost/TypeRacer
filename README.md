@@ -20,10 +20,13 @@ This is a simple typing speed test application built using HTML, CSS, and JavaSc
 - Real-time feedback on typing accuracy with correctly typed words highlighted in blue and incorrectly typed words highlighted in red.
 - Best score tracking for each difficulty level using `localStorage`.
 - User-friendly interface with a text-based input field, control buttons, and a results display area.
-
+## validation 
+![HTML Validation](https://i.ibb.co/JqnMvt0/)
+![CSS Validation](https://i.ibb.co/18Yszxf/)
 ## Game Data
 
 The game data is stored in a JSON object within the `script.js` file. It includes information about sentences for each difficulty level.
+
 
 ```javascript
 const sentences = {
@@ -41,6 +44,5 @@ const sentences = {
     ]
 };
 
-## validation
-![HTML Validation](https://i.ibb.co/JqnMvt0/html-validation.png)
-![CSS Validation](https://i.ibb.co/18Yszxf/css-validation.png)
+
+
